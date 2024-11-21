@@ -16,13 +16,15 @@
         :Masukkan email;
         :Reset password melalui email;
     else (Tidak)
-        repeat
         :Buka halaman Login;
         :Masukkan Username dan Password;
         |System|
-        repeat while (Password benar?) is (tidak) not (ya)
-        |Pengguna|
-        :Buka halaman Dashboard;
+        if (Password benar?) then (Tidak)
+            :Tampilkan password salah;
+        else (Ya)
+            |Pengguna|
+            :Buka halaman Dashboard;
+        endif
     endif
     :End;
     stop
