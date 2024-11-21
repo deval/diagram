@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>manajemen kegiatan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Flowchart Example</title>
+    <!-- Include the Mermaid.js library -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({
+            startOnLoad: true
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const mermaidCode = `
+                graph TD
+                    A[Start] --> B{Decision?}
+                    B -->|Yes| C[Do something]
+                    B -->|No| D[Do something else]
+                    C --> E[End]
+                    D --> E
+            `;
+
+            // Insert the Mermaid code into the div
+            const mermaidContainer = document.getElementById('mermaid-container');
+            mermaidContainer.innerHTML = `<div class="mermaid">${mermaidCode}</div>`;
+            mermaid.init(); // Reinitialize Mermaid after setting the content
+        });
+    </script>
 </head>
 <body>
-  <pre id="uml-code">
-    @startuml
-    |Pengguna|
-    start
-    :Buka halaman web;
-    if (Lupa Password?) then (Ya)
-        :Buka halaman Reset Password;
-        :Masukkan email;
-        :Reset password melalui email;
-    else (Tidak)
-        :Buka halaman Login;
-        :Masukkan Username dan Password;
-        |System|
-        if (Password benar?) then (Tidak)
-            :Tampilkan password salah;
-        else (Ya)
-            |Pengguna|
-            :Buka halaman Dashboard;
-        endif
-    endif
-    :End;
-    stop
-    @enduml
-  </pre>
 
-  <img id="uml-diagram" />
+    <h2>Flowchart Using Mermaid</h2>
 
-  <script src="https://cdn.jsdelivr.net/gh/markushedvall/plantuml-encoder/dist/plantuml-encoder.min.js"></script>
-  <script>
-    // Get PlantUML text
-    const umlCode = document.getElementById('uml-code').textContent;
+    <!-- The Mermaid code will be dynamically injected here -->
+    <div id="mermaid-container"></div>
 
-    // Encode the PlantUML text to a format understood by the PlantUML server
-    const encodedUml = plantumlEncoder.encode(umlCode);
-
-    // Set the PlantUML server URL for rendering the diagram
-    const plantUmlServer = 'http://www.plantuml.com/plantuml/svg/';
-
-    // Set the diagram image source to the PlantUML server URL with the encoded UML code
-    document.getElementById('uml-diagram').src = plantUmlServer + encodedUml;
-  </script>
 </body>
 </html>
