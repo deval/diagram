@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowchart ESKM</title>
+    <style>
+        .mermaid .node rect {
+            padding: 50px;
+        }
+    </style>    
+    <!-- Include the Mermaid.js library -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'forest',
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const mermaidCode = `
+                graph TD
+                    A[Start] --> B{Lupa\npassword?}
+                    B -->|Ya| C[Buka halaman\nReset Password]
+                    B -->|Tidak| D[Buka halaman\nLogin]
+                    C --> C1[Masukkan\nEmail]
+                    C1 --> C2[Reset password\ndari Email]
+                    C2 --> A
+                    D --> F[Masukkan\nPassword]
+                    F --> G{Password\nbenar?}
+                    G --> |Tidak| I[Muncul error\npassword salah]
+                    I --> A
+                    G --> |Ya| H[Tampil halaman\nDashboard]
+                    H --> H1{Logout?}
+                    H1 -->|Ya| Z[End]
+                    H1 -->|Tidak| J{Menu}
+                    J --> J1[Membuat\nTemplate]
+                    J --> J2[Membuat\nDokumen]
+                    J --> J3[Disposisi]
+                    J --> J4[Nota\nDinas]
+                    J --> J5[Manajemen\nJabatan]
+                    J1 --> K[Selesai]
+                    J2 --> K
+                    J3 --> K
+                    J4 --> K
+                    J5 --> K
+                    K --> H
+                    
+                    
+            `;
+
+            // Insert the Mermaid code into the div
+            const mermaidContainer = document.getElementById('mermaid-container');
+            mermaidContainer.innerHTML = `<div class="mermaid">${mermaidCode}</div>`;
+            mermaid.init(); // Reinitialize Mermaid after setting the content
+        });
+    </script>
+</head>
+<body>
+
+    <h2>Flowchart ESKM</h2>
+
+    <!-- The Mermaid code will be dynamically injected here -->
+    <div id="mermaid-container"></div>
+
+</body>
+</html>
