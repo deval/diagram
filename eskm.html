@@ -15,11 +15,15 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mermaidCode = `
                 graph TD
-                    A[Start] --> B{Decision?}
-                    B -->|Yes| C[Do something]
-                    B -->|No| D[Do something else]
+                    A[Start] --> B{Lupa password?}
+                    B -->|Ya| C[Buka halaman Reset Password]
+                    B -->|Tidak| D[Buka halaman Login]
                     C --> E[End]
-                    D --> E
+                    D --> F[Masukkan Password]
+                    F --> G{Password benar?}
+                    G --> |Ya| H[Tampil halaman Dashboard]
+                    G --> |Tidak| I[Muncul error password salah]
+                    I --> B
             `;
 
             // Insert the Mermaid code into the div
