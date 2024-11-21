@@ -23,9 +23,9 @@
                     C2 --> A
                     D --> F[Masukkan\nPassword]
                     F --> G{Password\nbenar?}
-                    G --> |Ya| H[Tampil halaman\nDashboard]
                     G --> |Tidak| I[Muncul error\npassword salah]
                     I --> A
+                    G --> |Ya| H[Tampil halaman\nDashboard]
                     H --> H1{Logout?}
                     H1 -->|Ya| Z[End]
                     H1 -->|Tidak| J{Jenis\nUser}
