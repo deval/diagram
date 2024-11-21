@@ -18,12 +18,20 @@
                     A[Start] --> B{Lupa password?}
                     B -->|Ya| C[Buka halaman Reset Password]
                     B -->|Tidak| D[Buka halaman Login]
-                    C --> E[End]
+                    C --> C1[Masukkan Email]
+                    C1 --> C2[Reset password dari Email]
+                    C2 --> A
                     D --> F[Masukkan Password]
                     F --> G{Password benar?}
                     G --> |Ya| H[Tampil halaman Dashboard]
                     G --> |Tidak| I[Muncul error password salah]
-                    I --> B
+                    I --> A
+                    H --> H1{Logout?}
+                    H1 -->|Ya| Z[End]
+                    H1 -->|Tidak| J{Jenis User}
+                    J -->|Operator| K{Menu Operator}
+                    J -->|Pengguna| L{Menu Pengguna}
+                    
             `;
 
             // Insert the Mermaid code into the div
