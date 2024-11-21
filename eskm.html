@@ -9,7 +9,8 @@
   <pre id="uml-code">
     @startuml
     start
-    :Start;
+    |Pengguna|
+    :Buka halaman web;
     if (Lupa Password?) then (Ya)
         :Buka halaman Reset Password;
         :Masukkan email;
@@ -17,7 +18,8 @@
     else (Tidak)
         :Buka halaman Login;
         :Masukkan Username dan Password;
-        if (Decision?) then (Yes)
+        |System|
+        if (Password benar?) then (Yes)
             :Do something;
         else (No)
             :Do something else;
