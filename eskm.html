@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>manajemen kegiatan</title>
+</head>
+<body>
+  <pre id="uml-code">
+    @startuml
+    start
+    :Start;
+    if (Decision?) then (Yes)
+        :Do something;
+    else (No)
+        :Do something else;
+    endif
+    :End;
+    stop
+    @enduml
+  </pre>
+
+  <img id="uml-diagram" />
+
+  <script src="https://cdn.jsdelivr.net/gh/markushedvall/plantuml-encoder/dist/plantuml-encoder.min.js"></script>
+  <script>
+    // Get PlantUML text
+    const umlCode = document.getElementById('uml-code').textContent;
+
+    // Encode the PlantUML text to a format understood by the PlantUML server
+    const encodedUml = plantumlEncoder.encode(umlCode);
+
+    // Set the PlantUML server URL for rendering the diagram
+    const plantUmlServer = 'http://www.plantuml.com/plantuml/svg/';
+
+    // Set the diagram image source to the PlantUML server URL with the encoded UML code
+    document.getElementById('uml-diagram').src = plantUmlServer + encodedUml;
+  </script>
+</body>
+</html>
