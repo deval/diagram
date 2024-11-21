@@ -21,27 +21,29 @@
                     C --> C1[Masukkan\nEmail]
                     C1 --> C2[Reset password\ndari Email]
                     C2 --> A
-                    D --> F[Masukkan Password]
-                    F --> G{Password benar?}
-                    G --> |Ya| H[Tampil halaman Dashboard]
-                    G --> |Tidak| I[Muncul error password salah]
+                    D --> F[Masukkan\nPassword]
+                    F --> G{Password\nbenar?}
+                    G --> |Ya| H[Tampil halaman\nDashboard]
+                    G --> |Tidak| I[Muncul error\npassword salah]
                     I --> A
                     H --> H1{Logout?}
                     H1 -->|Ya| Z[End]
-                    H1 -->|Tidak| J{Jenis User}
-                    J -->|Operator| K{Menu Operator}
-                    J -->|Pengguna| L{Menu Pengguna}
-                    K --> K1[Manajemen Pengguna]
-                    K --> K2[Manajemen Pengaduan]
-                    K --> K3[Manajemen Komisioner]
-                    K --> K4[Manajemen Jadwal Komisioner]
-                    K --> K5[Manajemen Jadwal Komisioner]
+                    H1 -->|Tidak| J{Jenis\nUser}
+                    J -->|Operator| K{Menu\nOperator}
+                    J -->|Pengguna| L{Menu\nPengguna}
+                    K --> K1[Manajemen\nPengguna]
+                    K --> K2[Manajemen\nPengaduan]
+                    K --> K3[Manajemen\nKomisioner]
+                    K --> K4[Manajemen\nJadwal Komisioner]
+                    K --> K5[Manajemen\nJadwal Komisioner]
                     K1 --> H
                     K2 --> H
                     K3 --> H
                     K4 --> H
                     K5 --> H
-                    
+
+                    class K,L menuClass;
+                    classDef menuClass fill:#f9f; 
                     
             `;
 
