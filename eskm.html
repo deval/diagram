@@ -15,11 +15,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mermaidCode = `
                 graph TD
-                    A[Start] --> B{Lupa password?}
-                    B -->|Ya| C[Buka halaman Reset Password]
-                    B -->|Tidak| D[Buka halaman Login]
-                    C --> C1[Masukkan Email]
-                    C1 --> C2[Reset password dari Email]
+                    A[Start] --> B{Lupa\npassword?}
+                    B -->|Ya| C[Buka halaman\nReset Password]
+                    B -->|Tidak| D[Buka halaman\nLogin]
+                    C --> C1[Masukkan\nEmail]
+                    C1 --> C2[Reset password\ndari Email]
                     C2 --> A
                     D --> F[Masukkan Password]
                     F --> G{Password benar?}
