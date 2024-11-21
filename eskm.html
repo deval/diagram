@@ -10,10 +10,16 @@
     @startuml
     start
     :Start;
-    if (Decision?) then (Yes)
-        :Do something;
-    else (No)
-        :Do something else;
+    if (Lupa Password?) then (Ya)
+        :Buka halaman Lupa Password;
+    else (Tidak)
+        :Buka Halaman Login;
+        :Masukkan Username dan Password;
+        if (Decision?) then (Yes)
+            :Do something;
+        else (No)
+            :Do something else;
+        endif
     endif
     :End;
     stop
