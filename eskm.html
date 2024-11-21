@@ -37,7 +37,13 @@
                     K --> K4[Manajemen\nJadwal Komisioner]
                     K --> K5[Manajemen\nJadwal Komisioner]
                     K1 --> M{Selesai}
-                    K2 --> M
+                    K2 --> K2A{Menu\nPengaduan}
+                    K2A -->|| K2A1[Daftar]
+                    K2A -->|| K2A2[Verifikasi]
+                    K2A -->|| K2A3[Pengaduan\nOffline]
+                    K2A1 --> M
+                    K2A2 --> M
+                    K2A3 --> M
                     K3 --> M
                     K4 --> M
                     K5 --> M
